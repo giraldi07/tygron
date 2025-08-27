@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bebas: 'Bebas Neue', cursive;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 210 11% 7%;
+    --foreground: 0 0% 98%;
+    --card: 210 11% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 11% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 18 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 210 47% 11%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 11% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 18 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 11% 15%;
+    --input: 210 11% 15%;
+    --ring: 18 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(135deg, rgba(255, 106, 0, 0.1) 0%, rgba(13, 27, 42, 0.8) 100%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 106, 0, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 106, 0, 0.6);
+  }
+}
